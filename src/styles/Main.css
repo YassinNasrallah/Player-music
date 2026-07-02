@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #FFF8E7;         
+  --card: #FFFFFF;
+  --primary: #A8D5BA;    
+  --secondary: #F7D488;  
+  --accent: #B8E1FF;
+  --text: #4A4A4A;
+}
+
+
+body {
+  background: linear-gradient(180deg, #fff8e7, #e7f8ec);
+  font-family: 'Comfortaa', sans-serif;
+  overflow-x: hidden;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 500px;
+  height: 100vh;
+
+  margin: 30px auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--bg);
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* navbar */
+.nav-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 120px;
+}
+
+/* title */
+h1 {
+  color: var(--primary);
+}
+
+/* 🎵 MUSIC CIRCLE CONTAINER */
+.musicCircle {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 30px auto;
+}
+
+/* 🎧 IMAGE (ZELDA DISC) */
+.musicCircle img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+
+  border: 6px solid var(--secondary);
+
+  box-shadow:
+    0 0 25px rgba(168, 213, 186, 0.6),
+    0 0 50px rgba(247, 212, 136, 0.3);
+
+  position: relative;
+  z-index: 1;
+}
+
+/* 🔵 PROGRESS BAR */
+.circlebar {
+  position: absolute;
+  inset: 0;
+
+  z-index: 2;
+
+  padding: 10px;
+
+}
+.controlles{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+/* 🎮 BUTTON STYLE */
+button {
+  padding: 12px 22px;
+
+  border: none;
+  border-radius: 20px;
+
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+
+  color: var(--text);
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.circlebar .CircularProgressbar-path {
+  stroke: #A8D5BA; /* Zelda green */
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.circlebar .CircularProgressbar-trail {
+  stroke: rgba(247, 212, 136, 0.2); /* light gold background */
+}
+
+
+
+.circlebar .CircularProgressbar {
+  filter: drop-shadow(0 0 10px rgba(168, 213, 186, 0.6));
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 🎵 ONLY WHEN PLAYING */
+.musicCircle img.playing {
+  animation: spin 6s linear infinite;
+}
+
+
+
