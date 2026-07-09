@@ -1,4 +1,4 @@
-import {React, useState, useRef, useEffect} from 'react'
+import {useState, useRef, useEffect} from 'react'
 import Navigation from '../components/Navigation'
 import Card from '../components/Card'
 import Music from '../components/Music'
